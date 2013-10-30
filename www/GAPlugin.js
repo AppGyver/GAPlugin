@@ -1,5 +1,6 @@
 (function(){
-    var cordovaRef = window.PhoneGap || window.Cordova || window.cordova;
+    // var cordovaRef = window.PhoneGap || window.Cordova || window.cordova;
+    var cordovaRef = window.PhoneGap || window.cordova || window.Cordova;
 
     function GAPlugin() { }
 
@@ -39,11 +40,11 @@
     GAPlugin.prototype.setVariable = function(success, fail, index, value) {
         return cordovaRef.exec(success, fail, 'GAPlugin', 'setVariable', [index, value]);
     };
-    
+
     GAPlugin.prototype.exit = function(success, fail) {
         return cordovaRef.exec(success, fail, 'GAPlugin', 'exitGA', []);
     };
- 
+
     if (cordovaRef)
     {
         cordovaRef.addConstructor(function() {
