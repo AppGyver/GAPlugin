@@ -107,10 +107,4 @@
     [self writeJavascript:[commandResult toErrorCallbackString:callbackID]];
 }
 
--(void)dealloc
-{
-    [[[GAI sharedInstance] defaultTracker] close];
-   // [super dealloc];
-}
-
 @end
